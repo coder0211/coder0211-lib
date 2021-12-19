@@ -56,6 +56,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_mobx",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -64,6 +70,12 @@
     {
       "name": "lints",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "loading_indicator",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/loading_indicator-3.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -80,8 +92,26 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mobx",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/mobx-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,7 +176,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-19T02:09:13.726909Z",
+  "generated": "2021-12-19T10:11:03.472918Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }
