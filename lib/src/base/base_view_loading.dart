@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'base_indicator.dart';
 
-class BaseLoading extends StatelessWidget {
-  final Color? backgroundColor;
+class BaseViewLoading extends StatelessWidget {
+  final Color backgroundColor;
   final Widget? child;
   final bool? isLoading;
-  final double? bgOpacity;
   final double? paddingBottom;
   final List<Color>? colorsIndicator;
 
-  const BaseLoading(
+  BaseViewLoading(
       {required this.child,
       required this.isLoading,
-      this.backgroundColor,
+      this.backgroundColor = Colors.grey,
       this.paddingBottom,
-      this.bgOpacity,
       this.colorsIndicator});
 
   @override
@@ -26,7 +24,7 @@ class BaseLoading extends StatelessWidget {
         Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: backgroundColor,
+            color: backgroundColor.withOpacity(0.2),
             child: Padding(
                 padding: EdgeInsets.only(bottom: paddingBottom ?? 0.0),
                 child: Center(
