@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../coder0211.dart';
 import 'base_indicator.dart';
 
 class BaseViewLoading extends StatelessWidget {
@@ -22,8 +23,8 @@ class BaseViewLoading extends StatelessWidget {
       child!,
       if (isLoading!)
         Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            width: BaseUtils.getScreenWidth(context),
+            height: BaseUtils.getScreenHeight(context),
             color: backgroundColor.withOpacity(0.2),
             child: Padding(
                 padding: EdgeInsets.only(bottom: paddingBottom ?? 0.0),
