@@ -7,12 +7,16 @@ class BaseCountDown extends StatefulWidget {
   final Function whenCompleted;
   final double? height;
   final double? radius;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
   const BaseCountDown(
       {Key? key,
       required this.timeSeconds,
       required this.whenCompleted,
       this.height,
-      this.radius})
+      this.radius,
+      this.backgroundColor,
+      this.foregroundColor})
       : super(key: key);
 
   @override
@@ -55,9 +59,10 @@ class _BaseCountDownState extends State<BaseCountDown>
     return Stack(
       children: [
         _customContainerProcess(
-            color: Colors.grey, data: BaseUtils.getScreenWidth(context)),
+            color: widget.backgroundColor ?? Colors.grey,
+            data: BaseUtils.getScreenWidth(context)),
         _customContainerProcess(
-            color: Colors.blue,
+            color: widget.foregroundColor ?? Colors.blue,
             data: BaseUtils.getScreenWidth(context) *
                 (_animation.value / (widget.timeSeconds * 1000.0)))
       ],
@@ -66,12 +71,12 @@ class _BaseCountDownState extends State<BaseCountDown>
 
   Widget _customContainerProcess({required double data, required Color color}) {
     return Container(
-      height: widget.height ?? 10,
-      width: data,
-      decoration: BoxDecoration(
+        height: widget.height ?? 10,
+        width: data,
+        decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.all(Radius.circular(widget.radius ?? 0))),
-    );
+          borderRadius: BorderRadius.all(Radius.circular(widget.radius ?? 0)),
+        ));
   }
 
   void _startAnimation() {
