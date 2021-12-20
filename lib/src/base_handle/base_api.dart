@@ -1,0 +1,3 @@
+class BaseAPI {
+  BaseAPI._();
+}

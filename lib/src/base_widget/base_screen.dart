@@ -8,7 +8,7 @@ abstract class BaseScreen extends StatefulWidget {
 }
 
 abstract class BaseScreenState extends State<BaseScreen> {
-  bool _isShowLoading = true;
+  bool _isConnected = false;
   bool isLoadDataSucceeded = false;
   PreferredSizeWidget? appBar;
   Color? backgroundColor, drawerScrimColor;
@@ -64,7 +64,7 @@ abstract class BaseScreenState extends State<BaseScreen> {
       restorationId: restorationId,
       body: SafeArea(
         child: BaseViewLoading(
-          isLoading: _isShowLoading || !isLoadDataSucceeded,
+          isLoading: !_isConnected || !isLoadDataSucceeded,
           child: body(),
         ),
       ),
@@ -74,7 +74,7 @@ abstract class BaseScreenState extends State<BaseScreen> {
   Widget body();
 
   Future<void> _checkInit() async {
-    _isShowLoading = await BaseUtils.checkConnection();
+    _isConnected = await BaseUtils.checkConnection();
     setState(() {});
   }
 }

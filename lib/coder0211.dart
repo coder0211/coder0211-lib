@@ -11,3 +11,7 @@ export 'src/base_widget/base_grid_answer.dart';
 export 'src/base_widget/base_screen.dart';
 //BASE HANDLE
 export 'src/base_handle/base_utils.dart';
+export 'src/base_handle/base_shared_preferences.dart';
+export 'src/base_handle/base_api.dart';
+// BASE picker
+export 'src/base_picker/base_image_picker.dart';
