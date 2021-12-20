@@ -1,7 +1,8 @@
 name: coder0211
-description: My Flutter package project.
+description: This is a package with functions and widgets to make app development faster and more convenient, currently it is developed by one developer.
 version: 0.0.3
-homepage:
+homepage: https://github.com/coder0211/coder0211.git
+repository: https://github.com/coder0211/coder0211.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
