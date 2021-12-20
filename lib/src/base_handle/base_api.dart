@@ -2,12 +2,18 @@ import 'package:dio/dio.dart';
 
 enum API_STATUS { SUSSCESSED, FAILED }
 
+class BaseDataAPI<T> {
+  T? object;
+  var apiStatus;
+  BaseDataAPI({this.object, this.apiStatus});
+}
+
 class BaseAPI {
   BaseAPI._();
 
   static String API = '';
 
-  static Future<T?> getData<T>({
+  static Future<BaseDataAPI<T>> getData<T>({
     required String route,
     CancelToken? cancelToken,
     Map<String, dynamic>? queryParameters,
@@ -21,13 +27,17 @@ class BaseAPI {
           queryParameters: queryParameters,
           onReceiveProgress: onReceiveProgress,
           options: options);
-      return response.data as T;
+      if (response.statusCode == 200) {
+        return BaseDataAPI(
+            object: response.data as T, apiStatus: API_STATUS.SUSSCESSED);
+      } else
+        return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     } catch (e) {
-      return null;
+      return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     }
   }
 
-  static Future<T?> postData<T>({
+  static Future<BaseDataAPI<T>> postData<T>({
     required String route,
     dynamic data,
     Map<String, dynamic>? queryParameters,
@@ -45,9 +55,13 @@ class BaseAPI {
           queryParameters: queryParameters,
           onSendProgress: onSendProgress,
           options: options);
-      return response.data as T;
+      if (response.statusCode == 200) {
+        return BaseDataAPI(
+            object: response.data as T, apiStatus: API_STATUS.SUSSCESSED);
+      } else
+        return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     } catch (e) {
-      return null;
+      return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     }
   }
 }
