@@ -1,6 +1,6 @@
 name: coder0211
-description: A new Flutter package project.
-version: 0.0.2
+description: My Flutter package project.
+version: 0.0.3
 homepage:
 
 environment:
@@ -10,9 +10,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  #loading indicator
   loading_indicator: ^3.0.2
 
+  #auto size text
   auto_size_text: ^3.0.0
+
+  #conntection
+  connectivity: ^3.0.6
 
 
 dev_dependencies:

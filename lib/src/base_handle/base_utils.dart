@@ -1,3 +1,4 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -44,5 +45,10 @@ class BaseUtils {
       if (match != null && match.groupCount >= 1) return match.group(1);
     }
     return null;
+  }
+
+  static Future<bool> checkConnection() async {
+    final connectivityResult = await Connectivity().checkConnectivity();
+    return connectivityResult != ConnectivityResult.none;
   }
 }
