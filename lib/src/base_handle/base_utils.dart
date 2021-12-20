@@ -51,4 +51,7 @@ class BaseUtils {
     final connectivityResult = await Connectivity().checkConnectivity();
     return connectivityResult != ConnectivityResult.none;
   }
+
+  static int reversedNumber({required int number}) =>
+      int.parse(number.toString().split('').reversed.join(''));
 }
