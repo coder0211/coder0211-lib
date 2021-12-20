@@ -30,8 +30,9 @@ dependencies:
   #dio
   dio: ^4.0.4
 
-  #http
-  http: ^0.13.4
+  #QR
+  qr_flutter: ^4.0.0
+
 
 
 
