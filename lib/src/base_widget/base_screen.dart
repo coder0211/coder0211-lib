@@ -33,6 +33,9 @@ abstract class BaseScreenState extends State<BaseScreen> {
   @override
   void initState() {
     super.initState();
+    print('\≈≈≈≈≈≈≈≈≈≈≈≈ Current screen ≈≈≈≈≈≈≈≈≈≈≈≈> ' +
+        this.runtimeType.toString().replaceFirst('State', '') +
+        '\n');
     BaseUtils.onWidgetBuildDone(_checkInit);
   }
 
