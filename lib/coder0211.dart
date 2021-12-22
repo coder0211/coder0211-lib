@@ -12,6 +12,7 @@ export 'src/base_widget/base_screen.dart';
 //BASE HANDLE
 export 'src/base_handle/base_utils.dart';
 export 'src/base_handle/base_shared_preferences.dart';
+export 'src/base_handle/base_navigation.dart';
 // BASE picker
 export 'src/base_picker/base_image_picker.dart';
 // BASE API
