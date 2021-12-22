@@ -7,7 +7,7 @@ class BaseNavigation {
       Navigator.pushNamedAndRemoveUntil(context, '/$routeName', (r) => false,
           arguments: arguments);
     else
-      Navigator.pushNamed(context, '/$routeName', arguments: arguments);
+      Navigator.pushNamed(context, '$routeName', arguments: arguments);
   }
 
   static pop(context) {
