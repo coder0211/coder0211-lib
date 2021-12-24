@@ -58,7 +58,9 @@ class BaseNavigationBar extends StatelessWidget {
                       color: index == indexSlelected
                           ? (selectedColor ?? Color(0xffFF8181))
                           : (color ?? Color(0xff797979)),
-                      icon: item.icon,
+                      icon: index == indexSlelected
+                          ? item.iconSelected
+                          : item.icon,
                       style: style,
                       title: item.title,
                       height: heightIcon ?? 30,
@@ -91,8 +93,9 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       color: Colors.transparent,
+      duration: Duration(milliseconds: 500),
       child: Column(
         children: [
           BaseSVGIcon(
@@ -114,6 +117,8 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
 
 class BaseNavigationBarItem {
   final String icon;
+  final String iconSelected;
   final String title;
-  BaseNavigationBarItem({required this.icon, required this.title});
+  BaseNavigationBarItem(
+      {required this.icon, required this.title, required this.iconSelected});
 }
