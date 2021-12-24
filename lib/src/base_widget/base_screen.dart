@@ -19,11 +19,9 @@ abstract class BaseScreenState<T extends BaseScreen> extends State<T> {
   }
 
   Widget frame() {
-    return SafeArea(
-      child: BaseViewLoading(
-        isLoading: !_isConnected || !isLoadDataSucceeded,
-        child: body(),
-      ),
+    return BaseViewLoading(
+      isLoading: !_isConnected || !isLoadDataSucceeded,
+      child: SafeArea(bottom: false, child: body()),
     );
   }
 

@@ -9,7 +9,7 @@ class BaseIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return LoadingIndicator(
       indicatorType: Indicator.ballClipRotatePulse,
-      colors: colorsIndicator ?? [Colors.blue, Colors.purple],
+      colors: colorsIndicator ?? [Color(0xff6D5ADD), Color(0xffFF8181)],
       strokeWidth: 5,
     );
   }
