@@ -1,4 +1,4 @@
-import 'package:coder0211/src/base_widget/base_svg_icon.dart';
+import 'package:coder0211/src/base_widget/base_svg.dart';
 import 'package:coder0211/src/base_widget/base_text.dart';
 import 'package:flutter/material.dart';
 
@@ -98,7 +98,7 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
       duration: Duration(milliseconds: 500),
       child: Column(
         children: [
-          BaseSVGIcon(
+          BaseSVG(
             path: icon,
             width: width,
             height: height,

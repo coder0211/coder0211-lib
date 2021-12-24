@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BaseSVGIcon extends StatelessWidget {
+class BaseSVG extends StatelessWidget {
   final String path;
   final double? width;
   final double? height;
   final Color? color;
   final BoxFit fit;
-  BaseSVGIcon(
+  BaseSVG(
       {Key? key,
       required this.path,
       this.width,
