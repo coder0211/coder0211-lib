@@ -25,7 +25,7 @@ class BaseButton extends StatelessWidget {
         height: height ?? 52,
         splashColor: splashColor,
         shape: RoundedRectangleBorder(
-            borderRadius: borderRadius ?? BorderRadius.circular(15),
+            borderRadius: borderRadius ?? BorderRadius.circular(10),
             side: borderSide),
         color: bgColor ?? Colors.blue,
         onPressed: () {
