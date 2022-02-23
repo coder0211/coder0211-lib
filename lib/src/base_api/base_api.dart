@@ -33,6 +33,7 @@ class BaseAPI {
       } else
         return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     } catch (e) {
+      print('Error [GET API]: $e');
       return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     }
   }
@@ -61,6 +62,7 @@ class BaseAPI {
       } else
         return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     } catch (e) {
+      print('Error [POST API]: $e');
       return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
     }
   }
