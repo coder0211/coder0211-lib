@@ -1,69 +1,81 @@
+// import 'package:dio/dio.dart';
+
 import 'package:dio/dio.dart';
 
 enum API_STATUS { SUSSCESSED, FAILED }
 
-class BaseDataAPI<T> {
-  T? object;
+class BaseDataAPI {
+  dynamic object;
   var apiStatus;
   BaseDataAPI({this.object, this.apiStatus});
 }
 
 class BaseAPI {
-  BaseAPI._();
-
   static String API = '';
+  final Dio _dio = Dio();
+  BaseAPI();
 
-  static Future<BaseDataAPI<T>> getData<T>({
-    required String route,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    void Function(int, int)? onReceiveProgress,
+  Future<BaseDataAPI> getData(
+    url, {
+    dynamic body,
+    Map<String, dynamic>? params,
+    String method = 'get',
   }) async {
     Response response;
+    print('API:GET:::::::::::::::::::================--------------->\n');
+    print('url: $API$url');
+    print('params: $params');
+    print('body: $body');
     try {
-      response = await Dio().get('$API/$route',
-          cancelToken: cancelToken,
-          queryParameters: queryParameters,
-          onReceiveProgress: onReceiveProgress,
-          options: options);
-      if (response.statusCode == 200) {
-        return BaseDataAPI(
-            object: response.data as T, apiStatus: API_STATUS.SUSSCESSED);
-      } else
-        return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
-    } catch (e) {
+      Options options = Options();
+      options.method = method;
+      response = await _dio.request(API + url,
+          data: body, queryParameters: params, options: options);
+    } on DioError catch (e) {
       print('Error [GET API]: $e');
-      return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
+      print('END API GET<---------------================:::::::::::::::\n');
+
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
     }
+    if (response.data is DioError) {
+      print('Error [GET API]: ${response.data}');
+      print('END API GET<---------------================:::::::::::::::\n');
+
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+    }
+    print('Success [GET API]: ${response.data}');
+    print('END API GET<---------------================:::::::::::::::\n');
+    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
   }
 
-  static Future<BaseDataAPI<T>> postData<T>({
-    required String route,
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    void Function(int, int)? onSendProgress,
-    void Function(int, int)? onReceiveProgress,
+  Future<BaseDataAPI> postData(
+    url, {
+    dynamic body,
+    Map<String, dynamic>? params,
+    String method = 'post',
   }) async {
     Response response;
+    print('API:POST:::::::::::::::::::================--------------->\n');
+    print('url: $API$url');
+    print('params: $params');
+    print('body: $body');
     try {
-      response = await Dio().post('$API/$route',
-          cancelToken: cancelToken,
-          data: data,
-          onReceiveProgress: onReceiveProgress,
-          queryParameters: queryParameters,
-          onSendProgress: onSendProgress,
-          options: options);
-      if (response.statusCode == 200) {
-        return BaseDataAPI(
-            object: response.data as T, apiStatus: API_STATUS.SUSSCESSED);
-      } else
-        return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
-    } catch (e) {
+      Options options = Options();
+      options.method = method;
+      response = await _dio.request(API + url,
+          data: body, queryParameters: params, options: options);
+    } on DioError catch (e) {
       print('Error [POST API]: $e');
-      return BaseDataAPI(object: null, apiStatus: API_STATUS.FAILED);
+      print('END API POST<---------------================:::::::::::::::\n');
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
     }
+    if (response.data is DioError) {
+      print('Error [POST API]: ${response.data}');
+      print('END API POST<---------------================:::::::::::::::\n');
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+    }
+    print('Success [POST API]: ${response.data}');
+    print('END API POST<---------------================:::::::::::::::\n');
+    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
   }
 }

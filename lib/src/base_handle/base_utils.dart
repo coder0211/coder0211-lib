@@ -20,7 +20,7 @@ class BaseUtils {
   }
 
   static void onWidgetBuildDone(Function function) {
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance?.addPostFrameCallback((_) {
       function();
     });
   }

@@ -7,10 +7,16 @@ class BaseIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingIndicator(
-      indicatorType: Indicator.ballClipRotatePulse,
-      colors: colorsIndicator ?? [Color(0xff6D5ADD), Color(0xffFF8181)],
-      strokeWidth: 5,
+    return Center(
+      child: SizedBox(
+        width: 52,
+        height: 52,
+        child: LoadingIndicator(
+          indicatorType: Indicator.ballClipRotatePulse,
+          colors: colorsIndicator ?? [Color(0xff96BAEC), Color(0xffFFC48D)],
+          strokeWidth: 5,
+        ),
+      ),
     );
   }
 }
