@@ -3,9 +3,9 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.12"
     },
     {
       "name": "auto_size_text",
@@ -21,7 +21,7 @@
     },
     {
       "name": "characters",
-      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -101,7 +101,7 @@
       "name": "flutter",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
@@ -132,6 +132,12 @@
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "http",
@@ -327,7 +333,7 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -345,7 +351,7 @@
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -398,7 +404,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-05-22T04:04:04.420792Z",
+  "generated": "2022-06-17T06:19:42.454294Z",
   "generator": "pub",
-  "generatorVersion": "2.18.0-136.0.dev"
+  "generatorVersion": "2.17.3"
 }

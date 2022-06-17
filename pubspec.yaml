@@ -1,6 +1,6 @@
 name: coder0211
 description: This is a package with functions and widgets to make app development faster and more convenient, currently it is developed by one developer.
-version: 0.0.29
+version: 0.0.38
 homepage: https://github.com/coder0211/coder0211.git
 repository: https://github.com/coder0211/coder0211.git
 
@@ -29,6 +29,9 @@ dependencies:
 
   #dio
   dio: ^4.0.6
+
+  #flutter toast
+  fluttertoast: ^8.0.9
 
   #QR
   qr_flutter: ^4.0.0

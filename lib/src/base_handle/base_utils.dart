@@ -1,11 +1,48 @@
+import 'package:coder0211/src/base_widget/base_text.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../constants.dart';
 
 class BaseUtils {
   BaseUtils._();
+
+  FToast fToast = FToast();
+
+  static void showToast(String? message,
+      {Toast? toastLength, required Color? bgColor}) {
+    Fluttertoast.cancel();
+    Fluttertoast.showToast(
+        msg: message ?? '',
+        textColor: Colors.white,
+        backgroundColor: bgColor,
+        gravity: ToastGravity.BOTTOM,
+        toastLength: toastLength ?? Toast.LENGTH_SHORT);
+  }
+
+  static void showScaffoldMessenger(BuildContext context,
+      {required String text,
+      required TextStyle? textStyle,
+      required Color? bgColor}) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      duration: Duration(milliseconds: 300),
+      backgroundColor: bgColor,
+      content: BaseText(
+        text,
+        style: textStyle,
+      ),
+    ));
+  }
+
+  static void copy(BuildContext context,
+      {required String content, required Color? bgColor}) {
+    Clipboard.setData(new ClipboardData(text: content)).then((_) {
+      showToast('Copied', bgColor: bgColor);
+    });
+  }
 
   static double getScreenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
@@ -20,7 +57,7 @@ class BaseUtils {
   }
 
   static void onWidgetBuildDone(Function function) {
-    SchedulerBinding.instance?.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       function();
     });
   }

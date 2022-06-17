@@ -3,6 +3,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 class BaseSharedPreferences {
   BaseSharedPreferences._();
 
+  static Future<bool> containKey(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.containsKey(key);
+  }
+
   static Future<bool> saveStringValue(String key, String value) async {
     final preferences = await SharedPreferences.getInstance();
     return preferences.setString(key, value);
