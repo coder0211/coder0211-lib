@@ -23,3 +23,6 @@ export 'src/base_picker/base_image_picker.dart';
 export 'src/base_api/base_api.dart';
 //BASE scan
 export 'src/base_scan/base_scan_qr.dart';
+
+//BASE EXTENSION
+export 'src/extensions/double_extension.dart';
