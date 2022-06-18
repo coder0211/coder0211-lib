@@ -26,3 +26,9 @@ class BaseText extends StatelessWidget {
         style: style);
   }
 }
+
+extension A on String {
+  Widget h1(Color color) {
+    return BaseText(this, style: TextStyle(fontSize: 24, color: color));
+  }
+}

@@ -96,4 +96,39 @@ class BaseAPI {
         'END API POST<---------------================:::::::::::::::');
     return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
   }
+
+  Future<BaseDataAPI> putData(
+    url, {
+    dynamic body,
+    Map<String, dynamic>? params,
+    String method = 'put',
+  }) async {
+    Response response;
+    printLogYellow(
+        'API:PUT:::::::::::::::::::================--------------->');
+    print('url: $API$url');
+    print('params: $params');
+    print('body: $body');
+    try {
+      Options options = Options();
+      options.method = method;
+      response = await _dio.request(API + url,
+          data: body, queryParameters: params, options: options);
+    } on DioError catch (e) {
+      printLogError('Error [PUT API]: $e');
+      printLogYellow(
+          'END API PUT<---------------================:::::::::::::::');
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+    }
+    if (response.data is DioError) {
+      printLogError('Error [PUT API]: ${response.data}');
+      printLogYellow(
+          'END API put<---------------================:::::::::::::::');
+      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+    }
+    printLogSusscess('Success [PUT API]: ${response.data}');
+    printLogYellow(
+        'END API put<---------------================:::::::::::::::');
+    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
+  }
 }
