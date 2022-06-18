@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../coder0211.dart';
-import 'base_indicator.dart';
 
 class BaseViewLoading extends StatelessWidget {
   final Color backgroundColor;

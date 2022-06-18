@@ -10,8 +10,6 @@ import '../constants.dart';
 class BaseUtils {
   BaseUtils._();
 
-  FToast fToast = FToast();
-
   static void showToast(String? message,
       {Toast? toastLength, required Color? bgColor}) {
     Fluttertoast.cancel();
