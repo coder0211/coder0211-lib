@@ -26,3 +26,4 @@ export 'src/base_scan/base_scan_qr.dart';
 
 //BASE EXTENSION
 export 'src/extensions/double_extension.dart';
+export 'src/extensions/text_extension.dart';
