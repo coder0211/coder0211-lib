@@ -33,11 +33,16 @@ dependencies:
   #flutter toast
   fluttertoast: ^8.0.9
 
-  #QR
+  #qr
   qr_flutter: ^4.0.0
 
-  #SVG
+  #svg
   flutter_svg: ^1.0.0
+
+  #state managerment
+  flutter_mobx: ^2.0.6+1
+  mobx: ^2.0.7+2
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:
