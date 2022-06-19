@@ -8,7 +8,7 @@ class BaseScanQR extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: QrImage(
-        data: "1234567890",
+        data: '1234567890',
         version: QrVersions.auto,
         size: 200.0,
       ),

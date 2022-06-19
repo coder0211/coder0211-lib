@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6",
       "packageUri": "lib/",
@@ -142,6 +148,12 @@
     {
       "name": "fluttertoast",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_fonts",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -242,8 +254,32 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.15",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "path_provider_ios",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_ios-2.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "path_provider_linux",
       "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_provider_macos",
+      "rootUri": "file:///Users/nguyenhoa/FlutterDev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -428,7 +464,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-06-18T14:39:57.329197Z",
+  "generated": "2022-06-19T14:50:19.610379Z",
   "generator": "pub",
   "generatorVersion": "2.17.3"
 }

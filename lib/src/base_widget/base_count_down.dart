@@ -1,3 +1,4 @@
+import 'package:coder0211/src/extensions/int_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../coder0211.dart';
@@ -59,12 +60,10 @@ class _BaseCountDownState extends State<BaseCountDown>
     return Stack(
       children: [
         _customContainerProcess(
-            color: widget.backgroundColor ?? Colors.grey,
-            data: BaseUtils.getScreenWidth(context)),
+            color: widget.backgroundColor ?? Colors.grey, data: 1.w),
         _customContainerProcess(
             color: widget.foregroundColor ?? Colors.blue,
-            data: BaseUtils.getScreenWidth(context) *
-                (_animation.value / (widget.timeSeconds * 1000.0)))
+            data: 1.w * (_animation.value / (widget.timeSeconds * 1000.0)))
       ],
     );
   }

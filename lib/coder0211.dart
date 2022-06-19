@@ -23,7 +23,8 @@ export 'src/base_picker/base_image_picker.dart';
 export 'src/base_api/base_api.dart';
 //BASE scan
 export 'src/base_scan/base_scan_qr.dart';
-
+//GLOBAL VALUE
+export 'src/global_value.dart';
 //BASE EXTENSION
 export 'src/extensions/double_extension.dart';
 export 'src/extensions/text_extension.dart';

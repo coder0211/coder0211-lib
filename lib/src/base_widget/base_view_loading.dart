@@ -1,3 +1,4 @@
+import 'package:coder0211/src/extensions/int_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../coder0211.dart';
@@ -22,7 +23,7 @@ class BaseViewLoading extends StatelessWidget {
       child!,
       if (isLoading!)
         Container(
-            width: BaseUtils.getScreenWidth(context),
+            width: 1.w,
             height: BaseUtils.getScreenHeight(context),
             color: backgroundColor.withOpacity(0.2),
             child: Padding(

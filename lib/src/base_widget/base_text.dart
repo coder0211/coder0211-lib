@@ -23,6 +23,6 @@ class BaseText extends StatelessWidget {
         textAlign: textAlign,
         maxLines: maxLines,
         minFontSize: minFontSize ?? 10,
-        style: style);
+        style: (style ?? TextStyle()).copyWith(wordSpacing: 0.4));
   }
 }
