@@ -2,6 +2,7 @@ import 'package:coder0211/src/base_widget/base_svg.dart';
 import 'package:coder0211/src/base_widget/base_text.dart';
 import 'package:flutter/material.dart';
 
+/// #
 class BaseNavigationBar extends StatelessWidget {
   final Color? bgColor;
   final double? radius;

@@ -10,10 +10,10 @@ import '../constants.dart';
 class BaseUtils {
   BaseUtils._();
 
-  ///#[showToast] Show toast message
-  ///param[message] Message to show
-  ///param[toastLength] Length of toast
-  ///param[bgColor] Background color of toast
+  /// # [showToast] Show toast message
+  /// * param[message] Message to show
+  /// * param[toastLength] Length of toast
+  /// * param[bgColor] Background color of toast
   static void showToast(String? message,
       {Toast? toastLength, required Color? bgColor}) {
     Fluttertoast.cancel();
@@ -25,10 +25,10 @@ class BaseUtils {
         toastLength: toastLength ?? Toast.LENGTH_SHORT);
   }
 
-  ///#[showScaffoldMessenger] Show scaffold messenger
-  ///param[text] Text to show
-  ///param[textSytle] Text style
-  ///param[bgColor] Background color of scaffold
+  /// # [showScaffoldMessenger] Show scaffold messenger
+  /// * param[text] Text to show
+  /// * param[textSytle] Text style
+  /// * param[bgColor] Background color of scaffold
   static void showScaffoldMessenger(BuildContext context,
       {required String text,
       required TextStyle? textStyle,
@@ -43,9 +43,9 @@ class BaseUtils {
     ));
   }
 
-  ///#[copy] Copy text to clipboard
-  ///param[content] Text to copy
-  ///param[bgColor] Background color of showToast
+  /// # [copy] Copy text to clipboard
+  /// * param[content] Text to copy
+  /// * param[bgColor] Background color of showToast
   static void copy(BuildContext context,
       {required String content, required Color? bgColor}) {
     Clipboard.setData(new ClipboardData(text: content)).then((_) {
@@ -53,29 +53,29 @@ class BaseUtils {
     });
   }
 
-  ///#[getScreenWidth] Get screen width
+  /// # [getScreenWidth] Get screen width
   static double getScreenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
-  ///#[getScreenHeight] Get screen height
+  /// # [getScreenHeight] Get screen height
   static double getScreenHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
 
-  ///#[hideKeyBoard] Hide keyboard
+  /// # [hideKeyBoard] Hide keyboard
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
 
-  ///#[onWidgetBuildDone] When widget build done
+  /// # [onWidgetBuildDone] When widget build done
   static void onWidgetBuildDone(Function function) {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       function();
     });
   }
 
-  ///#[checkValidateEmail] Check validate email
+  /// # [checkValidateEmail] Check validate email
   static bool checkValidateEmail(BuildContext context, String input) {
     final RegExp regExp = RegExp(Constants.REGEX_EMAIL);
     if (input.isEmpty) {
@@ -87,7 +87,7 @@ class BaseUtils {
     }
   }
 
-  ///#[splitYoutubeId] Split youtube id
+  /// # [splitYoutubeId] Split youtube id
   static String? splitYoutubeId(String url, {bool trimWhitespaces = true}) {
     if (!url.contains(Constants.KEY_HTTP) &&
         (url.length == Constants.ID_LENGTH)) return url;
@@ -99,13 +99,13 @@ class BaseUtils {
     return null;
   }
 
-  ///#[checkConnection] Check connection
+  /// # [checkConnection] Check connection
   static Future<bool> checkConnection() async {
     final connectivityResult = await Connectivity().checkConnectivity();
     return connectivityResult != ConnectivityResult.none;
   }
 
-  ///#[reversedNumber] Reversed number
+  /// # [reversedNumber] Reversed number
   static int reversedNumber({required int number}) =>
       int.parse(number.toString().split('').reversed.join(''));
 }
