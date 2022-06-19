@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+///#[BaseButton] is a button with a rounded border and a shadow.
+///param[height] is the height of the button.(default: 52)
+///param[borderRadius] is the radius of the border.(default: 10)
+///param[bgColor] is the background color of the button.(default: Colors.blue)
 class BaseButton extends StatelessWidget {
   final Function onPressed;
   final BorderSide borderSide;

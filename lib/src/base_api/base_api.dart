@@ -21,10 +21,15 @@ void printLogSusscess(String message) {
 }
 
 class BaseAPI {
+  ///#[API] is domain of API
   static String API = '';
   final Dio _dio = Dio();
   BaseAPI();
 
+  ///#[get] is get method of API
+  ///param[url] is url of API without domain
+  ///param[params] is params of API with key and value
+  ///param[body] is body of API with key and value
   Future<BaseDataAPI> getData(
     url, {
     dynamic body,
@@ -62,6 +67,10 @@ class BaseAPI {
     return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
   }
 
+  ///#[post] is get method of API
+  ///param[url] is url of API without domain
+  ///param[params] is params of API with key and value
+  ///param[body] is body of API with key and value
   Future<BaseDataAPI> postData(
     url, {
     dynamic body,
@@ -97,6 +106,10 @@ class BaseAPI {
     return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
   }
 
+  ///#[put] is get method of API
+  ///param[url] is url of API without domain
+  ///param[params] is params of API with key and value
+  ///param[body] is body of API with key and value
   Future<BaseDataAPI> putData(
     url, {
     dynamic body,

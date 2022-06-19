@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
+///#[BaseIndicator] is a base class for all indicator widgets
 class BaseIndicator extends StatelessWidget {
   final List<Color>? colorsIndicator;
   const BaseIndicator({Key? key, this.colorsIndicator}) : super(key: key);
