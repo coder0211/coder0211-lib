@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 /// # [BaseSvg] is a widget that displays an SVG image.
-/// * param[path] is the path of the SVG image.
-/// * param[width] is the width of the SVG image.
-/// * param[height] is the height of the SVG image.
-/// * param[color] is the color of the SVG image.
-/// * param[fit] is the fit of the SVG image.
+/// * Param [path] is the path of the SVG image.
+/// * Param [width] is the width of the SVG image.
+/// * Param [height] is the height of the SVG image.
+/// * Param [color] is the color of the SVG image.
+/// * Param [fit] is the fit of the SVG image.
 class BaseSVG extends StatelessWidget {
   final String path;
   final double? width;

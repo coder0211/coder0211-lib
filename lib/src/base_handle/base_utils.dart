@@ -11,9 +11,9 @@ class BaseUtils {
   BaseUtils._();
 
   /// # [showToast] Show toast message
-  /// * param[message] Message to show
-  /// * param[toastLength] Length of toast
-  /// * param[bgColor] Background color of toast
+  /// * Param [message] Message to show
+  /// * Param [toastLength] Length of toast
+  /// * Param [bgColor] Background color of toast
   static void showToast(String? message,
       {Toast? toastLength, required Color? bgColor}) {
     Fluttertoast.cancel();
@@ -26,9 +26,9 @@ class BaseUtils {
   }
 
   /// # [showScaffoldMessenger] Show scaffold messenger
-  /// * param[text] Text to show
-  /// * param[textSytle] Text style
-  /// * param[bgColor] Background color of scaffold
+  /// * Param [text] Text to show
+  /// * Param [textSytle] Text style
+  /// * Param [bgColor] Background color of scaffold
   static void showScaffoldMessenger(BuildContext context,
       {required String text,
       required TextStyle? textStyle,
@@ -44,8 +44,8 @@ class BaseUtils {
   }
 
   /// # [copy] Copy text to clipboard
-  /// * param[content] Text to copy
-  /// * param[bgColor] Background color of showToast
+  /// * Param [content] Text to copy
+  /// * Param [bgColor] Background color of showToast
   static void copy(BuildContext context,
       {required String content, required Color? bgColor}) {
     Clipboard.setData(new ClipboardData(text: content)).then((_) {

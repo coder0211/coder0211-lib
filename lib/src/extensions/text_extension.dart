@@ -7,11 +7,11 @@ import 'package:google_fonts/google_fonts.dart';
 ///[EXAMPLE] hello.d1()
 extension TextEX on String {
   /// # [d1] return text with style d1,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1,
-  /// * param[fontSize] font size = 42,
-  /// * param[fontWeight] font weight = FontWeight.w300,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1,
+  /// * Param [fontSize] font size = 42,
+  /// * Param [fontWeight] font weight = FontWeight.w300,
   Widget d1(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -24,11 +24,11 @@ extension TextEX on String {
   }
 
   /// # [h1R] return text with style h1 regular,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 36,
-  /// * param[fontWeight] font weight = FontWeight.w400,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 36,
+  /// * Param [fontWeight] font weight = FontWeight.w400,
   Widget h1R(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -41,11 +41,11 @@ extension TextEX on String {
   }
 
   /// # [t1M] return text with style t1 medium,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 28,
-  /// * param[fontWeight] font weight = FontWeight.w500,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 28,
+  /// * Param [fontWeight] font weight = FontWeight.w500,
   Widget t1M(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -58,11 +58,11 @@ extension TextEX on String {
   }
 
   /// # [t2R] return text with style t2 regular,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 20,
-  /// * param[fontWeight] font weight = FontWeight.w400,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 20,
+  /// * Param [fontWeight] font weight = FontWeight.w400,
   Widget t2R(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -75,11 +75,11 @@ extension TextEX on String {
   }
 
   /// # [b1R] return text with style b1 regular,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 16,
-  /// * param[fontWeight] font weight = FontWeight.w400,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 16,
+  /// * Param [fontWeight] font weight = FontWeight.w400,
   Widget b1R(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -92,11 +92,11 @@ extension TextEX on String {
   }
 
   /// # [b2R] return text with style b2 regular,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 14,
-  /// * param[fontWeight] font weight = FontWeight.w400,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 14,
+  /// * Param [fontWeight] font weight = FontWeight.w400,
   Widget b2R(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -109,11 +109,11 @@ extension TextEX on String {
   }
 
   /// # [b1] return text with style b1,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 16,
-  /// * param[fontWeight] font weight = FontWeight.bold,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 16,
+  /// * Param [fontWeight] font weight = FontWeight.bold,
   Widget b1(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -126,11 +126,11 @@ extension TextEX on String {
   }
 
   /// # [b2] return text with style b2,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 14,
-  /// * param[fontWeight] font weight = FontWeight.bold,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 14,
+  /// * Param [fontWeight] font weight = FontWeight.bold,
   Widget b2(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -143,11 +143,11 @@ extension TextEX on String {
   }
 
   /// # [labelR] return text with style label regular,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 11,
-  /// * param[fontWeight] font weight = FontWeight.w400,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 11,
+  /// * Param [fontWeight] font weight = FontWeight.w400,
   Widget labelR(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,
@@ -160,11 +160,11 @@ extension TextEX on String {
   }
 
   /// # [labelB] return text with style label bold,
-  /// * param[color] color = Colors.black,
-  /// * param[textAlign] textAlign = TextAlign.start,
-  /// * param[maxLines] maxLines = 1 (default),
-  /// * param[fontSize] font size = 11,
-  /// * param[fontWeight] font weight = FontWeight.bold,
+  /// * Param [color] color = Colors.black,
+  /// * Param [textAlign] textAlign = TextAlign.start,
+  /// * Param [maxLines] maxLines = 1 (default),
+  /// * Param [fontSize] font size = 11,
+  /// * Param [fontWeight] font weight = FontWeight.bold,
   Widget labelB(
       {Color color = Colors.black,
       TextAlign textAlign = TextAlign.start,

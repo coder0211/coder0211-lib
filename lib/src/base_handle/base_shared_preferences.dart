@@ -27,15 +27,15 @@ class BaseSharedPreferences {
   }
 
   /// # [saveIntValue] Save int value to SharedPreferences
-  /// * param[value] The value to save
-  /// * param[key] The key to save the value
+  /// * Param [value] The value to save
+  /// * Param [key] The key to save the value
   static Future<bool> savedDoubleValue(String key, double value) async {
     final preferences = await SharedPreferences.getInstance();
     return preferences.setDouble(key, value);
   }
 
   /// # [getIntValue] Get int value from SharedPreferences
-  /// * param[key] The key to get the value
+  /// * Param [key] The key to get the value
   static Future<double?> getDoubleValue(String key) async {
     final preferences = await SharedPreferences.getInstance();
     final value = preferences.getDouble(key);
@@ -43,7 +43,7 @@ class BaseSharedPreferences {
   }
 
   /// # [saveBoolValue] Save bool value to SharedPreferences
-  /// * param[value] The value to save
+  /// * Param [value] The value to save
   static Future<void> remove(String key) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove(key);

@@ -27,9 +27,9 @@ class BaseAPI {
   BaseAPI();
 
   /// # [get] is get method of API
-  /// * param[url] is url of API without domain
-  /// * param[params] is params of API with key and value
-  /// * param[body] is body of API with key and value
+  /// * Param [url] is url of API without domain
+  /// * Param [params] is params of API with key and value
+  /// * Param [body] is body of API with key and value
   Future<BaseDataAPI> getData(
     url, {
     dynamic body,
@@ -68,9 +68,9 @@ class BaseAPI {
   }
 
   /// # [post] is get method of API
-  /// * param[url] is url of API without domain
-  /// * param[params] is params of API with key and value
-  /// * param[body] is body of API with key and value
+  /// * Param [url] is url of API without domain
+  /// * Param [params] is params of API with key and value
+  /// * Param [body] is body of API with key and value
   Future<BaseDataAPI> postData(
     url, {
     dynamic body,
@@ -107,9 +107,9 @@ class BaseAPI {
   }
 
   /// # [put] is get method of API
-  /// * param[url] is url of API without domain
-  /// * param[params] is params of API with key and value
-  /// * param[body] is body of API with key and value
+  /// * Param [url] is url of API without domain
+  /// * Param [params] is params of API with key and value
+  /// * Param [body] is body of API with key and value
   Future<BaseDataAPI> putData(
     url, {
     dynamic body,
