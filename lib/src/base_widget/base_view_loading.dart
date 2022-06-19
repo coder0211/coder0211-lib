@@ -23,7 +23,7 @@ class BaseViewLoading extends StatelessWidget {
       child!,
       if (isLoading!)
         Container(
-            width: 1.w,
+            width: BaseUtils.getScreenWidth(context),
             height: BaseUtils.getScreenHeight(context),
             color: backgroundColor.withOpacity(0.2),
             child: Padding(

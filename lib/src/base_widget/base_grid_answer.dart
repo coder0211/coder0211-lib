@@ -97,8 +97,8 @@ class _BaseGridAnswerState extends State<BaseGridAnswer> {
             ],
             color: Colors.amber,
             borderRadius: BorderRadius.all(Radius.circular(15))),
-        height: 1.w / 2 - 30,
-        width: 1.w / 2 - 30,
+        height: BaseUtils.getScreenWidth(context) / 2 - 30,
+        width: BaseUtils.getScreenWidth(context) / 2 - 30,
         child: Center(child: BaseText(answer, style: widget.style)),
       ),
     );
