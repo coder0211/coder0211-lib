@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://github.com/coder0211/coder0211.git" target="blank"><img src="lib/logo/logo.svg" width="200" alt="Nest Logo" /></a>
+</p>
+<p align="center">
+  <a href="https://pub.dev/packages/coder0211/score" target="_blank"><img src="https://img.shields.io/badge/PUB%20POINTS-130%2F130-green" alt="coder0211-like" /></a>
+  <a href="https://pub.dev/packages/coder0211/score" target="_blank"><img src="https://img.shields.io/badge/Coder0211-likes%3A22-yellow" alt="coder0211-like" /></a>
+  <a href="https://github.com/coder0211/coder0211/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/LICENSE-MIT-blue" alt="Package License" /></a>  
+</p>
+
 # Coder0211
 
 This is a package with functions and widgets to make app development faster and more convenient, currently it is developed by one developer.
