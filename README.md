@@ -107,7 +107,30 @@ class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
 
 ```
 
-## 4. TextEX
+## 4. BaseNavigation
+
+### [push] Push a route to the navigator
+
+- Param [context] The context to push the route to
+- Param [routeName] The routeName to push
+- Param [clearStack] Clear the stack before pushing the
+- Example:
+
+```dart
+BaseNavigation.push(context, routeName: '/', clearStack: true);
+```
+
+### [getArgs] Get the arguments from the current route
+
+- Param [context] The context to get the arguments
+- Param [key] The key to get the arguments
+- Example:
+
+```dart
+BaseNavigation.getArgs(context, key: 'id');
+```
+
+## 5. TextEX
 
 - USING : `<String>.<Name()>`
 - Example:
@@ -118,7 +141,7 @@ hoặc
 S.current.splash_screen_title.d1(color: AppColors.whiteText)
 ```
 
-## 5. DoubleEX
+## 6. DoubleEX
 
 - USING : `<Double>.<Name()>`
 - Example:
