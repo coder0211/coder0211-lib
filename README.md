@@ -1,5 +1,5 @@
 <p align="center">
-   <img src= ["https://raw.githubusercontent.com/coder0211/coder0211/main/lib/logo/logo.svg](https://github.com/coder0211)" max-height="100" alt="Coder0211-logo" />
+  <a href="https://github.com/coder0211/coder0211"><img src="https://raw.githubusercontent.com/coder0211/coder0211/main/lib/logo/logo.svg" width="200" alt="Coder0211-logo"></a>
 </p>
 <p align="center">
   <a href="https://pub.dev/packages/coder0211/score" target="_blank"><img src="https://img.shields.io/badge/PUB%20POINTS-130%2F130-green" alt="coder0211-like" /></a>
