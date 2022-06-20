@@ -1,3 +1,3 @@
-## 0.0.50
+## 0.0.51
 
-- Update readme.md
+- Update logo
