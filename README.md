@@ -18,7 +18,6 @@ class MyHomePage extends BaseScreen {
      @override
      State<MyHomePage> createState() => _MyHomePageState();
 }
-
 ```
 
 ### [BaseScreenState] is a base class for all screen states in the app.
@@ -27,7 +26,6 @@ class MyHomePage extends BaseScreen {
 - AutomaticKeepAliveClientMixin is used to keep the screen alive when the user
   navigates to another screen.
 - It also provides the [initState] method to initialize the [store] instance.
-- It also provides the [dispose] method to dispose the [store] instance.
 - It also provides the [build] method to build the screen.
 - Every screen state should extend this class.
 - [BaseScreenState] is a stateful widget.
@@ -46,40 +44,76 @@ class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
  }
 ```
 
-## 2. TextEX
+## 2. BaseAPI
 
-- USING : `<String>.<Name()>`
-- > Example: `hello.d1()`
+### [BaseDataAPI] - Base Class for handling API
 
-### [d1] return text with style d1
+### [fetchData] is fetch data from API
 
-- Param [color] color = Colors.black
-- Param [textAlign] textAlign = TextAlign.start
-- Param [maxLines] maxLines = 1
-- Param [fontSize] font size = 42
-- Param [fontWeight] font weight = FontWeight.w300
+- Param [url] is url of API without domain
+- Param [params] is params of API with key and value
+- Param [body] is body of API with key and value
+- Param [headers] is headers of API with key and value
+- Return [BaseDataAPI] is object of BaseDataAPI with object and apiStatus
 
 ```dart
-  Widget d1(
-      {Color color = Colors.black,
-      TextAlign textAlign = TextAlign.start,
-      int maxLines = 1}) {
-    return BaseText(this,
-        textAlign: textAlign,
-        maxLines: maxLines,
-        style: GoogleFonts.notoSans(
-            fontSize: 42, color: color, fontWeight: FontWeight.w300));
+ return BaseDataAPI(object: response.data, apiStatus:ApiStatus.SUCCEEDED);
+```
+
+- Example:
+
+```dart
+@action
+  Future<void> getData() async {
+    BaseAPI _api = BaseAPI();
+    BaseAPI.domain = 'https://example.com';
+    await _api.fetchData('/data', method: ApiMethod.GET).then((value) {
+      switch (value.apiStatus) {
+        case ApiStatus.SUCCEEDED:
+          printLogSusscess('SUCCEEDED');
+          // Handle success response here
+          break;
+        case ApiStatus.INTERNET_UNAVAILABLE:
+          printLogYellow('INTERNET_UNAVAILABLE');
+          BaseUtils.showToast('INTERNET UNAVAILABLE', bgColor: Colors.red);
+          break;
+        default:
+          printLogError('FAILED');
+          // Handle failed response here
+          break;
+      }
+    });
   }
 ```
 
-## 3. DoubleEX
+## 3. BaseSharedPreferences
 
-- USING : `<Double>.<Name()>`
-- > Example: `10.0.r(context)`
-
-### [r(context)] Get the standard ratio compared to the design screen size
+### [BaseSharedPreferences] is a base class for all shared preferences
 
 ```dart
-  double r(BuildContext context, {double defaultScreenWidth = 390}) =>
-      (this / defaultScreenWidth) * BaseUtils.getScreenWidth(context);
+    String value = '';
+    if(await BaseSharedPreferences.containKey('KEY')){
+        value = await BaseSharedPreferences.getStringValue('KEY');
+    }
+
+```
+
+## 4. TextEX
+
+- USING : `<String>.<Name()>`
+- Example:
+
+```dart
+'Hello'.d1()
+hoặc
+S.current.splash_screen_title.d1(color: AppColors.whiteText)
+```
+
+## 5. DoubleEX
+
+- USING : `<Double>.<Name()>`
+- Example:
+
+```dart
+10.0.r(context)
 ```

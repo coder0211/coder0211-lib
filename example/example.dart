@@ -33,6 +33,28 @@ abstract class _ExampleStore with Store {
   ice() {
     ic++;
   }
+
+  @action
+  Future<void> getData() async {
+    BaseAPI _api = BaseAPI();
+    BaseAPI.domain = 'https://example.com';
+    await _api.fetchData('/data', method: ApiMethod.GET).then((value) {
+      switch (value.apiStatus) {
+        case ApiStatus.SUCCEEDED:
+          printLogSusscess('SUCCEEDED');
+          // Handle success response here
+          break;
+        case ApiStatus.INTERNET_UNAVAILABLE:
+          printLogYellow('INTERNET_UNAVAILABLE');
+          BaseUtils.showToast('INTERNET UNAVAILABLE', bgColor: Colors.red);
+          break;
+        default:
+          printLogError('FAILED');
+          // Handle failed response here
+          break;
+      }
+    });
+  }
 }
 
 class MyApp extends StatelessWidget {

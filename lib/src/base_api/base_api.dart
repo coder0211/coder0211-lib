@@ -53,7 +53,7 @@ class BaseAPI {
   final Dio _dio = Dio();
 
   /// BaseAPI is instance of BaseAPI
-  BaseAPI._();
+  BaseAPI();
 
   /// # [fetchData] is fetch data from API
   /// * Param [url] is url of API without domain

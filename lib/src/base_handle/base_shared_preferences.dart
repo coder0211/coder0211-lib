@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// # [BaseSharedPreferences] is a base class for all shared preferences
 class BaseSharedPreferences {
   BaseSharedPreferences._();
 

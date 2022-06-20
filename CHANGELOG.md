@@ -1,3 +1,3 @@
-## 0.0.45
+## 0.0.46
 
-- Update base api
+- Update readme.md
