@@ -1,8 +1,9 @@
 name: coder0211
 description: This is a package with functions and widgets to make app development faster and more convenient, currently it is developed by one developer.
-version: 0.0.53
+version: 0.0.54
 homepage: https://github.com/coder0211/coder0211.git
 repository: https://github.com/coder0211/coder0211.git
+license: MIT
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

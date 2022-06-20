@@ -96,7 +96,7 @@ class _ExampleState extends BaseScreenState<Example, ExampleStore> {
                 style: Theme.of(context).textTheme.headline4,
               );
             }),
-            'heelo'.d1()
+            'Hello'.d1()
           ],
         ),
       ),
