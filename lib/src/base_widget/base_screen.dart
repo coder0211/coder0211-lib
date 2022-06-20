@@ -23,7 +23,6 @@ abstract class BaseScreen extends StatefulWidget {
 /// the user navigates to another screen.
 /// * It also provides the [initState] method to initialize
 /// the [store] instance.
-/// * It also provides the [dispose] method to dispose the [store] instance.
 /// * It also provides the [build] method to build the screen.
 /// * Every screen state should extend this class.
 /// * [BaseScreenState] is a stateful widget.
@@ -48,6 +47,8 @@ abstract class BaseScreenState<T extends BaseScreen, S extends Store>
 
     ///Initialize the [store] instance.
     store = context.read<S>();
+
+    ///Print log when the screen is created.
     printLogBlue('\≈≈≈≈≈≈≈≈≈≈≈≈ Current screen ≈≈≈≈≈≈≈≈≈≈≈≈> ' +
         this
             .runtimeType

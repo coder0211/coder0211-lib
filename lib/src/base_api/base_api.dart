@@ -1,7 +1,32 @@
+import 'package:coder0211/coder0211.dart';
 import 'package:dio/dio.dart';
 
-enum ApiStatus { SUSSCESSED, FAILED }
+/// ## Api Status
+/// * [SUCCEEDED] - The request was successful.
+/// * [FAILED] - The request failed.
+/// * [INTERNET_UNAVAILABLE] - The internet is unavailable.
+enum ApiStatus { SUCCEEDED, FAILED, INTERNET_UNAVAILABLE }
 
+/// ## Api Method
+/// * [GET] - Get method.
+/// * [POST] - Post method.
+/// * [PUT] - Put method.
+/// * [DELETE] - Delete method.
+enum ApiMethod { GET, POST, PUT, DELETE }
+
+/// ## api Method with Map of [ApiMethod, String]
+/// * ApiMethod.GET - Get method = 'get'
+/// * ApiMethod.POST - Post method = 'post'
+/// * ApiMethod.PUT - Put method = 'put'
+/// * ApiMethod.DELETE - Delete method = 'delete'
+Map<ApiMethod, String> apiMethod = {
+  ApiMethod.GET: 'get',
+  ApiMethod.POST: 'post',
+  ApiMethod.PUT: 'put',
+  ApiMethod.DELETE: 'delete'
+};
+
+/// ## [BaseDataAPI] - Base Class for handling API
 class BaseDataAPI {
   dynamic object;
   var apiStatus;
@@ -21,127 +46,74 @@ void printLogSusscess(String message) {
 }
 
 class BaseAPI {
-  /// # [domain] is domain of API
+  /// ## [domain] is domain of API
   static String domain = '';
+
+  /// _dio is instance of dio
   final Dio _dio = Dio();
-  BaseAPI();
 
-  /// # [get] is get method of API
+  /// BaseAPI is instance of BaseAPI
+  BaseAPI._();
+
+  /// # [fetchData] is fetch data from API
   /// * Param [url] is url of API without domain
   /// * Param [params] is params of API with key and value
   /// * Param [body] is body of API with key and value
-  Future<BaseDataAPI> getData(
+  /// * Param [headers] is headers of API with key and value
+  /// * Return [BaseDataAPI] is object of BaseDataAPI with object and apiStatus
+  /// * Example:
+  ///  ```dart
+  ///  return BaseDataAPI(object: response.data, apiStatus:ApiStatus.SUCCEEDED);
+  /// ```
+  Future<BaseDataAPI> fetchData(
     url, {
     dynamic body,
     Map<String, dynamic>? params,
-    String method = 'get',
+    Map<String, dynamic>? headers,
+    ApiMethod method = ApiMethod.GET,
   }) async {
+    /// Check internet connection is available
+    /// * If internet connection is not available,
+    ///  return [ApiStatus.INTERNET_UNAVAILABLE]
+    /// * If internet connection is available,
+    /// continue to fetch data
+
+    if (!(await BaseUtils.checkConnection())) {
+      return BaseDataAPI(
+        apiStatus: ApiStatus.INTERNET_UNAVAILABLE,
+      );
+    }
+
+    /// Continue to fetch data
+    /// response is response of API
     Response response;
-    printLogYellow(
-        'API:GET:::::::::::::::::::================--------------->');
+    printLogYellow('API:${apiMethod[method]}|================--------------->');
     print('url: $domain$url');
     print('params: $params');
     print('body: $body');
     try {
       Options options = Options();
-      options.method = method;
+      options.method = apiMethod[method];
+      options.headers = headers;
       response = await _dio.request(domain + url,
           data: body, queryParameters: params, options: options);
     } on DioError catch (e) {
-      printLogError('Error [GET API]: $e');
+      /// If error is DioError, return [ApiStatus.FAILED]
+      printLogError('Error [${apiMethod[method]} API]: $e');
       printLogYellow(
-          'END API GET<---------------================:::::::::::::::');
-
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
+          'END API ${apiMethod[method]}<---------------================|');
+      return BaseDataAPI(apiStatus: ApiStatus.FAILED);
     }
+    // If response.data is DioError, return [ApiStatus.FAILED]
     if (response.data is DioError) {
-      printLogError('Error [GET API]: ${response.data}');
-      printLogYellow(
-          'END API GET<---------------================:::::::::::::::');
-
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
+      printLogError('Error [${apiMethod[method]} API]: ${response.data}');
+      printLogYellow('END API GET<---------------================|');
+      return BaseDataAPI(apiStatus: ApiStatus.FAILED);
     }
-    printLogSusscess('Success [GET API]: ${response.data}');
+    // If response.data is not null, return [response.data ,ApiStatus.SUCCEEDED]
+    printLogSusscess('Success [${apiMethod[method]} API]: ${response.data}');
     printLogYellow(
-        'END API GET<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
-  }
-
-  /// # [post] is get method of API
-  /// * Param [url] is url of API without domain
-  /// * Param [params] is params of API with key and value
-  /// * Param [body] is body of API with key and value
-  Future<BaseDataAPI> postData(
-    url, {
-    dynamic body,
-    Map<String, dynamic>? params,
-    String method = 'post',
-  }) async {
-    Response response;
-    printLogYellow(
-        'API:POST:::::::::::::::::::================--------------->');
-    print('url: $domain$url');
-    print('params: $params');
-    print('body: $body');
-    try {
-      Options options = Options();
-      options.method = method;
-      response = await _dio.request(domain + url,
-          data: body, queryParameters: params, options: options);
-    } on DioError catch (e) {
-      printLogError('Error [POST API]: $e');
-      printLogYellow(
-          'END API POST<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
-    }
-    if (response.data is DioError) {
-      printLogError('Error [POST API]: ${response.data}');
-      printLogYellow(
-          'END API POST<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
-    }
-    printLogSusscess('Success [POST API]: ${response.data}');
-    printLogYellow(
-        'END API POST<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
-  }
-
-  /// # [put] is get method of API
-  /// * Param [url] is url of API without domain
-  /// * Param [params] is params of API with key and value
-  /// * Param [body] is body of API with key and value
-  Future<BaseDataAPI> putData(
-    url, {
-    dynamic body,
-    Map<String, dynamic>? params,
-    String method = 'put',
-  }) async {
-    Response response;
-    printLogYellow(
-        'API:PUT:::::::::::::::::::================--------------->');
-    print('url: $domain$url');
-    print('params: $params');
-    print('body: $body');
-    try {
-      Options options = Options();
-      options.method = method;
-      response = await _dio.request(domain + url,
-          data: body, queryParameters: params, options: options);
-    } on DioError catch (e) {
-      printLogError('Error [PUT API]: $e');
-      printLogYellow(
-          'END API PUT<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
-    }
-    if (response.data is DioError) {
-      printLogError('Error [PUT API]: ${response.data}');
-      printLogYellow(
-          'END API put<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
-    }
-    printLogSusscess('Success [PUT API]: ${response.data}');
-    printLogYellow(
-        'END API put<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
+        'END API ${apiMethod[method]}<---------------================|');
+    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUCCEEDED);
   }
 }

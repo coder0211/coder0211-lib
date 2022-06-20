@@ -100,6 +100,8 @@ class BaseUtils {
   }
 
   /// # [checkConnection] Check connection internet
+  /// * Return true if connection internet
+  /// * Return false if not connection internet
   static Future<bool> checkConnection() async {
     final connectivityResult = await Connectivity().checkConnectivity();
     return connectivityResult != ConnectivityResult.none;
