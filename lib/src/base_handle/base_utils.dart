@@ -10,7 +10,7 @@ import '../constants.dart';
 class BaseUtils {
   BaseUtils._();
 
-  /// # [showToast] Show toast message
+  /// # [showToast] Show toast message with [message]
   /// * Param [message] Message to show
   /// * Param [toastLength] Length of toast
   /// * Param [bgColor] Background color of toast
@@ -25,7 +25,7 @@ class BaseUtils {
         toastLength: toastLength ?? Toast.LENGTH_SHORT);
   }
 
-  /// # [showScaffoldMessenger] Show scaffold messenger
+  /// # [showScaffoldMessenger] Show scaffold messenger with message
   /// * Param [text] Text to show
   /// * Param [textSytle] Text style
   /// * Param [bgColor] Background color of scaffold
@@ -43,7 +43,7 @@ class BaseUtils {
     ));
   }
 
-  /// # [copy] Copy text to clipboard
+  /// # [copy] Copy text to clipboard and show toast
   /// * Param [content] Text to copy
   /// * Param [bgColor] Background color of showToast
   static void copy(BuildContext context,
@@ -53,29 +53,29 @@ class BaseUtils {
     });
   }
 
-  /// # [getScreenWidth] Get screen width
+  /// # [getScreenWidth] Get screen width in pixel
   static double getScreenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
-  /// # [getScreenHeight] Get screen height
+  /// # [getScreenHeight] Get screen height (without status bar)
   static double getScreenHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
 
-  /// # [hideKeyBoard] Hide keyboard
+  /// # [hideKeyBoard] Hide keyboard when tap outside
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
 
-  /// # [onWidgetBuildDone] When widget build done
+  /// # [onWidgetBuildDone] When widget build done callback function
   static void onWidgetBuildDone(Function function) {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       function();
     });
   }
 
-  /// # [checkValidateEmail] Check validate email
+  /// # [checkValidateEmail] Check validate email address
   static bool checkValidateEmail(BuildContext context, String input) {
     final RegExp regExp = RegExp(Constants.REGEX_EMAIL);
     if (input.isEmpty) {
@@ -87,7 +87,7 @@ class BaseUtils {
     }
   }
 
-  /// # [splitYoutubeId] Split youtube id
+  /// # [splitYoutubeId] Split youtube id from url youtube
   static String? splitYoutubeId(String url, {bool trimWhitespaces = true}) {
     if (!url.contains(Constants.KEY_HTTP) &&
         (url.length == Constants.ID_LENGTH)) return url;
@@ -99,7 +99,7 @@ class BaseUtils {
     return null;
   }
 
-  /// # [checkConnection] Check connection
+  /// # [checkConnection] Check connection internet
   static Future<bool> checkConnection() async {
     final connectivityResult = await Connectivity().checkConnectivity();
     return connectivityResult != ConnectivityResult.none;

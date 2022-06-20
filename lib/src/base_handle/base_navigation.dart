@@ -7,7 +7,8 @@ class BaseNavigation {
   /// # [push] Push a route to the navigator
   /// * Param [routeName] The routeName to push
   /// * Param [context] The context to push the route to
-  /// * Param [clearStack] Clear the stack before pushing the route (default: false)
+  /// * Param [clearStack] Clear the stack before pushing the
+  /// route (default: false)
   static push(BuildContext context,
       {required String routeName, Object? arguments, bool clearStack = false}) {
     if (clearStack)

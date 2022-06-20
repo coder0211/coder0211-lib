@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-enum API_STATUS { SUSSCESSED, FAILED }
+enum ApiStatus { SUSSCESSED, FAILED }
 
 class BaseDataAPI {
   dynamic object;
@@ -21,8 +21,8 @@ void printLogSusscess(String message) {
 }
 
 class BaseAPI {
-  /// # [API] is domain of API
-  static String API = '';
+  /// # [domain] is domain of API
+  static String domain = '';
   final Dio _dio = Dio();
   BaseAPI();
 
@@ -39,32 +39,32 @@ class BaseAPI {
     Response response;
     printLogYellow(
         'API:GET:::::::::::::::::::================--------------->');
-    print('url: $API$url');
+    print('url: $domain$url');
     print('params: $params');
     print('body: $body');
     try {
       Options options = Options();
       options.method = method;
-      response = await _dio.request(API + url,
+      response = await _dio.request(domain + url,
           data: body, queryParameters: params, options: options);
     } on DioError catch (e) {
       printLogError('Error [GET API]: $e');
       printLogYellow(
           'END API GET<---------------================:::::::::::::::');
 
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     if (response.data is DioError) {
       printLogError('Error [GET API]: ${response.data}');
       printLogYellow(
           'END API GET<---------------================:::::::::::::::');
 
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     printLogSusscess('Success [GET API]: ${response.data}');
     printLogYellow(
         'END API GET<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
+    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
   }
 
   /// # [post] is get method of API
@@ -80,30 +80,30 @@ class BaseAPI {
     Response response;
     printLogYellow(
         'API:POST:::::::::::::::::::================--------------->');
-    print('url: $API$url');
+    print('url: $domain$url');
     print('params: $params');
     print('body: $body');
     try {
       Options options = Options();
       options.method = method;
-      response = await _dio.request(API + url,
+      response = await _dio.request(domain + url,
           data: body, queryParameters: params, options: options);
     } on DioError catch (e) {
       printLogError('Error [POST API]: $e');
       printLogYellow(
           'END API POST<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     if (response.data is DioError) {
       printLogError('Error [POST API]: ${response.data}');
       printLogYellow(
           'END API POST<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     printLogSusscess('Success [POST API]: ${response.data}');
     printLogYellow(
         'END API POST<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
+    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
   }
 
   /// # [put] is get method of API
@@ -119,29 +119,29 @@ class BaseAPI {
     Response response;
     printLogYellow(
         'API:PUT:::::::::::::::::::================--------------->');
-    print('url: $API$url');
+    print('url: $domain$url');
     print('params: $params');
     print('body: $body');
     try {
       Options options = Options();
       options.method = method;
-      response = await _dio.request(API + url,
+      response = await _dio.request(domain + url,
           data: body, queryParameters: params, options: options);
     } on DioError catch (e) {
       printLogError('Error [PUT API]: $e');
       printLogYellow(
           'END API PUT<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     if (response.data is DioError) {
       printLogError('Error [PUT API]: ${response.data}');
       printLogYellow(
           'END API put<---------------================:::::::::::::::');
-      return BaseDataAPI(object: [], apiStatus: API_STATUS.FAILED);
+      return BaseDataAPI(object: [], apiStatus: ApiStatus.FAILED);
     }
     printLogSusscess('Success [PUT API]: ${response.data}');
     printLogYellow(
         'END API put<---------------================:::::::::::::::');
-    return BaseDataAPI(object: response.data, apiStatus: API_STATUS.SUSSCESSED);
+    return BaseDataAPI(object: response.data, apiStatus: ApiStatus.SUSSCESSED);
   }
 }

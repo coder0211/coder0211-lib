@@ -19,9 +19,10 @@ abstract class BaseScreen extends StatefulWidget {
 
 /// # [BaseScreenState] is a base class for all screen states in the app.
 /// * It provides the [store].
-/// * AutomaticKeepAliveClientMixin is used to keep the screen alive when the user
-///navigates to another screen.
-/// * It also provides the [initState] method to initialize the [store] instance.
+/// * AutomaticKeepAliveClientMixin is used to keep the screen alive when
+/// the user navigates to another screen.
+/// * It also provides the [initState] method to initialize
+/// the [store] instance.
 /// * It also provides the [dispose] method to dispose the [store] instance.
 /// * It also provides the [build] method to build the screen.
 /// * Every screen state should extend this class.
