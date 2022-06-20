@@ -79,7 +79,6 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
   final Color color;
   final TextStyle style;
   final double? height, width;
-  final BoxFit fit;
   final String title;
   const _BaseNavigationBarItemWidget(
       {Key? key,
@@ -88,7 +87,6 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
       required this.color,
       this.height,
       this.width,
-      this.fit = BoxFit.contain,
       required this.title})
       : super(key: key);
 
@@ -99,13 +97,7 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
       duration: Duration(milliseconds: 500),
       child: Column(
         children: [
-          BaseSVG(
-            path: icon,
-            width: width,
-            height: height,
-            color: color,
-            fit: fit,
-          ),
+          BaseSVG(path: icon, width: width, height: height, color: color),
           Padding(
             padding: const EdgeInsets.only(top: 5),
             child: BaseText(title, style: style.copyWith(color: color)),

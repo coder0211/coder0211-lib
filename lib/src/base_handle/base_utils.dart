@@ -77,7 +77,7 @@ class BaseUtils {
 
   /// # [checkValidateEmail] Check validate email address
   static bool checkValidateEmail(BuildContext context, String input) {
-    final RegExp regExp = RegExp(Constants.REGEX_EMAIL);
+    final RegExp regExp = RegExp(Constants.regexEmail);
     if (input.isEmpty) {
       return false;
     } else if (!regExp.hasMatch(input)) {
@@ -89,10 +89,10 @@ class BaseUtils {
 
   /// # [splitYoutubeId] Split youtube id from url youtube
   static String? splitYoutubeId(String url, {bool trimWhitespaces = true}) {
-    if (!url.contains(Constants.KEY_HTTP) &&
-        (url.length == Constants.ID_LENGTH)) return url;
+    if (!url.contains(Constants.keyHttp) && (url.length == Constants.idLength))
+      return url;
     if (trimWhitespaces) url = url.trim();
-    for (final regex in Constants.REGEX_URL_YOUTUBE) {
+    for (final regex in Constants.regexUrlYoutube) {
       final Match? match = RegExp(regex).firstMatch(url);
       if (match != null && match.groupCount >= 1) return match.group(1);
     }
