@@ -73,7 +73,7 @@ class _BaseCircleChartState extends State<BaseCircleChart>
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 5,
                       blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ]),
           width: widget.width ?? 120,
@@ -96,7 +96,7 @@ class CircleChart extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint circle = Paint()
       ..strokeWidth = stockCircles ?? 10.0
-      ..color = backgroundPainter ?? Color(0xff0F218B)
+      ..color = backgroundPainter ?? const Color(0xff0F218B)
       ..style = PaintingStyle.stroke;
 
     Offset center = Offset(size.width / 2, size.height / 2);

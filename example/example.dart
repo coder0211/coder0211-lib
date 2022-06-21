@@ -30,7 +30,7 @@ abstract class _ExampleStore with Store {
   ObservableList<int> listsInt = ObservableList<int>();
 
   @action
-  ice() {
+  void ice() {
     ic++;
   }
 
@@ -63,8 +63,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [Provider<ExampleStore>(create: (context) => ExampleStore())],
-      child: MaterialApp(
-        home: const Example(),
+      child: const MaterialApp(
+        home: Example(),
       ),
     );
   }

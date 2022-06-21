@@ -9,7 +9,7 @@ class BaseViewLoading extends StatelessWidget {
   final double? paddingBottom;
   final List<Color>? colorsIndicator;
 
-  BaseViewLoading(
+  const BaseViewLoading(
       {required this.child,
       required this.isLoading,
       this.backgroundColor = Colors.grey,

@@ -38,7 +38,7 @@ linter:
     always_specify_types: false
 
     # Back to the 80s
-    lines_longer_than_80_chars: true
+    # lines_longer_than_80_chars: true
 
     sort_unnamed_constructors_first: false
 
@@ -49,3 +49,11 @@ linter:
     avoid_multiple_declarations_per_line: false
 
     require_trailing_commas: false
+
+    always_declare_return_types: true
+
+    prefer_const_constructors: true
+
+    prefer_const_declarations: true
+
+    prefer_const_constructors_in_immutables: true

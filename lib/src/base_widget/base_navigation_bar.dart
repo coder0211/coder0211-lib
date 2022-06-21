@@ -15,7 +15,7 @@ class BaseNavigationBar extends StatelessWidget {
   final double? heightIcon;
   final double? widthIcon;
   final int indexSlelected;
-  BaseNavigationBar({
+  const BaseNavigationBar({
     Key? key,
     this.bgColor,
     this.radius,
@@ -33,14 +33,14 @@ class BaseNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(18),
+      margin: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-          color: bgColor ?? Color(0xffFCFCFF),
+          color: bgColor ?? const Color(0xffFCFCFF),
           boxShadow: [
             BoxShadow(
                 blurRadius: 7,
-                offset: Offset(4, 4),
-                color: Color(0xffC9CADF).withOpacity(0.55)),
+                offset: const Offset(4, 4),
+                color: const Color(0xffC9CADF).withOpacity(0.55)),
           ],
           borderRadius: BorderRadius.all(Radius.circular(radius ?? 50))),
       child: SafeArea(
@@ -57,8 +57,8 @@ class BaseNavigationBar extends StatelessWidget {
                   onTap: () => onItemSelected(index),
                   child: _BaseNavigationBarItemWidget(
                       color: index == indexSlelected
-                          ? (selectedColor ?? Color(0xffFF8181))
-                          : (color ?? Color(0xff797979)),
+                          ? (selectedColor ?? const Color(0xffFF8181))
+                          : (color ?? const Color(0xff797979)),
                       icon: index == indexSlelected
                           ? item.iconSelected
                           : item.icon,
@@ -94,7 +94,7 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       color: Colors.transparent,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       child: Column(
         children: [
           BaseSVG(path: icon, width: width, height: height, color: color),

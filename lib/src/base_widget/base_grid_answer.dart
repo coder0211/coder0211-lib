@@ -58,7 +58,7 @@ class _BaseGridAnswerState extends State<BaseGridAnswer> {
               BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   blurRadius: 10,
-                  offset: Offset(2, 1),
+                  offset: const Offset(2, 1),
                   spreadRadius: 3)
             ], shape: BoxShape.circle, color: Colors.green),
             alignment: Alignment.center,
@@ -91,11 +91,11 @@ class _BaseGridAnswerState extends State<BaseGridAnswer> {
               BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   blurRadius: 10,
-                  offset: Offset(2, 1),
+                  offset: const Offset(2, 1),
                   spreadRadius: 3)
             ],
             color: Colors.amber,
-            borderRadius: BorderRadius.all(Radius.circular(15))),
+            borderRadius: const BorderRadius.all(const Radius.circular(15))),
         height: BaseUtils.getScreenWidth(context) / 2 - 30,
         width: BaseUtils.getScreenWidth(context) / 2 - 30,
         child: Center(child: BaseText(answer, style: widget.style)),

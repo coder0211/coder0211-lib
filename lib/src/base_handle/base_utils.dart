@@ -34,7 +34,7 @@ class BaseUtils {
       required TextStyle? textStyle,
       required Color? bgColor}) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       backgroundColor: bgColor,
       content: BaseText(
         text,

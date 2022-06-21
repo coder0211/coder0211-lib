@@ -14,7 +14,8 @@ class BaseIndicator extends StatelessWidget {
         height: 52,
         child: LoadingIndicator(
           indicatorType: Indicator.ballClipRotatePulse,
-          colors: colorsIndicator ?? [Color(0xff96BAEC), Color(0xffFFC48D)],
+          colors: colorsIndicator ??
+              [const Color(0xff96BAEC), const Color(0xffFFC48D)],
           strokeWidth: 5,
         ),
       ),

@@ -12,7 +12,7 @@ class BaseNavigation {
   /// ```dart
   /// BaseNavigation.push(context, routeName: '/', clearStack: true);
   /// ```
-  static push(BuildContext context,
+  static void push(BuildContext context,
       {required String routeName, Object? arguments, bool clearStack = false}) {
     if (clearStack)
       Navigator.pushNamedAndRemoveUntil(context, '$routeName', (r) => false,
@@ -22,7 +22,7 @@ class BaseNavigation {
   }
 
   /// # [pop] Pop the current route from the navigator
-  static pop(context) {
+  static void pop(context) {
     Navigator.pop(context);
   }
 

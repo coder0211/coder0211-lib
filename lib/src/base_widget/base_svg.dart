@@ -13,7 +13,7 @@ class BaseSVG extends StatelessWidget {
   final double? height;
   final Color? color;
   final BoxFit fit;
-  BaseSVG(
+  const BaseSVG(
       {Key? key,
       required this.path,
       this.width,
