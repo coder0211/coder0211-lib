@@ -1,3 +1,4 @@
+import 'package:coder0211/coder0211.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +40,7 @@ abstract class BaseScreen extends StatefulWidget {
 ///    }
 /// }
 /// ```
-abstract class BaseScreenState<T extends BaseScreen, S extends Store>
+abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
     extends State<T> with AutomaticKeepAliveClientMixin<T>, BaseScreenMixin<S> {
   @override
   void initState() {
@@ -48,6 +49,10 @@ abstract class BaseScreenState<T extends BaseScreen, S extends Store>
     ///Initialize the [store] instance.
     store = context.read<S>();
 
+    store.onInit();
+
+    BaseUtils.onWidgetBuildDone(store.onWidgetBuildDone);
+
     ///Print log when the screen is created.
     printLogBlue('\≈≈≈≈≈≈≈≈≈≈≈≈ Current screen ≈≈≈≈≈≈≈≈≈≈≈≈> ' +
         this
@@ -55,6 +60,13 @@ abstract class BaseScreenState<T extends BaseScreen, S extends Store>
             .toString()
             .replaceFirst('State', '')
             .replaceAll('_', ''));
+  }
+
+  @override
+  void dispose() {
+    /// When this screen on dispose then store call onDispose function
+    store.onDispose();
+    super.dispose();
   }
 
   ///printLogBlue is a method to print logs in blue.
@@ -69,6 +81,30 @@ abstract class BaseScreenState<T extends BaseScreen, S extends Store>
 
 ///[BaseScreenMixin] is a base class for all screen mixins in the app.
 ///It provides the [store].
-mixin BaseScreenMixin<T> {
+mixin BaseScreenMixin<T extends BaseStoreMixin> {
   late T store;
+}
+
+mixin BaseStoreMixin on Store {
+  @protected
+  @mustCallSuper
+
+  ///onInit called when initState called
+  void onInit();
+
+  @protected
+  @mustCallSuper
+
+  ///onWidgetBuildDone called when build done widget
+  Future<void> onWidgetBuildDone();
+
+  @protected
+  @mustCallSuper
+
+  ///onDispose called when dispose c
+  void onDispose();
+
+  @protected
+  @mustCallSuper
+  void resetValue();
 }

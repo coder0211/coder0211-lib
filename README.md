@@ -53,7 +53,36 @@ class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
  }
 ```
 
-## 2. BaseAPI
+## 2. Store
+
+### State managements
+
+```dart
+/// Clean before updating:
+///    flutter packages pub run build_runner watch --delete-conflicting-outputs
+
+part 'example_store.g.dart';
+
+class ExampleStore = _ExampleStore with _$ExampleStore;
+
+abstract class _ExampleStore with Store, BaseStoreMixin {
+  @override
+  void onInit() {}
+
+  @override
+  void onDispose() {}
+
+  @override
+  Future<void> onWidgetBuildDone() async {}
+
+  @override
+  void resetValue() {}
+
+  //... Some values and actions
+}
+```
+
+## 3. BaseAPI
 
 ### [BaseDataAPI] - Base Class for handling API
 
@@ -95,7 +124,7 @@ class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
   }
 ```
 
-## 3. BaseSharedPreferences
+## 4. BaseSharedPreferences
 
 ### [BaseSharedPreferences] is a base class for all shared preferences
 
@@ -107,7 +136,7 @@ class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
 
 ```
 
-## 4. BaseNavigation
+## 5. BaseNavigation
 
 ### [push] Push a route to the navigator
 
@@ -130,7 +159,7 @@ BaseNavigation.push(context, routeName: '/', clearStack: true);
 BaseNavigation.getArgs(context, key: 'id');
 ```
 
-## 5. TextEX
+## 6. TextEX
 
 - USING : `<String>.<Name()>`
 - Example:
@@ -141,7 +170,7 @@ hoặc
 S.current.splash_screen_title.d1(color: AppColors.whiteText)
 ```
 
-## 6. DoubleEX
+## 7. DoubleEX
 
 - USING : `<Double>.<Name()>`
 - Example:

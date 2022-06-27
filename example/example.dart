@@ -14,7 +14,19 @@ void main() {
 ///    flutter packages pub run build_runner watch --delete-conflicting-outputs
 class ExampleStore = _ExampleStore with _$ExampleStore;
 
-abstract class _ExampleStore with Store {
+abstract class _ExampleStore with Store, BaseStoreMixin {
+  @override
+  void onInit() {}
+
+  @override
+  void onDispose() {}
+
+  @override
+  Future<void> onWidgetBuildDone() async {}
+
+  @override
+  void resetValue() {}
+
   @observable
   int _ic = 0;
 
