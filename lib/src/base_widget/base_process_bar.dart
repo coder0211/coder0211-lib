@@ -65,7 +65,7 @@ class _BaseProcessBarState extends State<BaseProcessBar>
     });
 
     /// Start the animation controller
-    BaseUtils.onWidgetBuildDone(_startAnimation);
+    BaseUtils.onWidgetBuildDone(_startAnimation, context);
     super.initState();
   }
 

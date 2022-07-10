@@ -69,9 +69,9 @@ class BaseUtils {
   }
 
   /// # [onWidgetBuildDone] When widget build done callback function
-  static void onWidgetBuildDone(Function function) {
+  static void onWidgetBuildDone(Function function, BuildContext context) {
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      function();
+      function(context);
     });
   }
 

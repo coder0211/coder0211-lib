@@ -51,7 +51,7 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
 
     store.onInit();
 
-    BaseUtils.onWidgetBuildDone(store.onWidgetBuildDone);
+    BaseUtils.onWidgetBuildDone(store.onWidgetBuildDone, context);
 
     ///Print log when the screen is created.
     printLogBlue('\≈≈≈≈≈≈≈≈≈≈≈≈ Current screen ≈≈≈≈≈≈≈≈≈≈≈≈> ' +
@@ -96,7 +96,7 @@ mixin BaseStoreMixin on Store {
   @mustCallSuper
 
   ///onWidgetBuildDone called when build done widget
-  Future<void> onWidgetBuildDone();
+  Future<void> onWidgetBuildDone(BuildContext context);
 
   @protected
   @mustCallSuper

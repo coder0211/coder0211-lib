@@ -44,7 +44,7 @@ class _BaseCountDownState extends State<BaseCountDown>
         widget.whenCompleted.call();
       }
     });
-    BaseUtils.onWidgetBuildDone(_startAnimation);
+    BaseUtils.onWidgetBuildDone(_startAnimation, context);
     super.initState();
   }
 
