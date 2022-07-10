@@ -1,6 +1,7 @@
 import 'package:coder0211/src/base_widget/base_svg.dart';
 import 'package:coder0211/src/base_widget/base_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// #
 class BaseNavigationBar extends StatelessWidget {
@@ -11,7 +12,7 @@ class BaseNavigationBar extends StatelessWidget {
   final Function(int) onItemSelected;
   final Color? color;
   final Color? selectedColor;
-  final TextStyle style;
+  final TextStyle? style;
   final double? heightIcon;
   final double? widthIcon;
   final int indexSlelected;
@@ -24,7 +25,7 @@ class BaseNavigationBar extends StatelessWidget {
     required this.onItemSelected,
     this.color,
     this.selectedColor,
-    required this.style,
+    this.style,
     this.heightIcon,
     this.widthIcon,
     required this.indexSlelected,
@@ -62,7 +63,9 @@ class BaseNavigationBar extends StatelessWidget {
                       icon: index == indexSlelected
                           ? item.iconSelected
                           : item.icon,
-                      style: style,
+                      style: style ??
+                          GoogleFonts.notoSans(
+                              fontWeight: FontWeight.w500, fontSize: 12),
                       title: item.title,
                       height: heightIcon ?? 30,
                       width: widthIcon ?? 30));
