@@ -67,13 +67,13 @@ class ExampleStore = _ExampleStore with _$ExampleStore;
 
 abstract class _ExampleStore with Store, BaseStoreMixin {
   @override
-  void onInit() {}
+  void onInit(BuildContext context) {}
 
   @override
   void onDispose() {}
 
   @override
-  Future<void> onWidgetBuildDone() async {}
+  Future<void> onWidgetBuildDone(BuildContext context) async {}
 
   @override
   void resetValue() {}
