@@ -49,7 +49,7 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
     ///Initialize the [store] instance.
     store = context.read<S>();
 
-    store.onInit();
+    store.onInit(context);
 
     BaseUtils.onWidgetBuildDone(store.onWidgetBuildDone, context);
 
@@ -90,7 +90,7 @@ mixin BaseStoreMixin on Store {
   @mustCallSuper
 
   ///onInit called when initState called
-  void onInit();
+  void onInit(BuildContext context);
 
   @protected
   @mustCallSuper
