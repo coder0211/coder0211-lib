@@ -147,6 +147,8 @@ abstract class _ExampleStore with Store, BaseStoreMixin {
 
 ```dart
 BaseNavigation.push(context, routeName: '/', clearStack: true);
+//or
+BaseNavigation.push(context, routeName: '/', clearStack: true, {'id' : 12345});
 ```
 
 ### [getArgs] Get the arguments from the current route

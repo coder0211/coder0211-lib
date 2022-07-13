@@ -89,6 +89,7 @@ class BaseAPI {
     Response response;
     printLogYellow('API:${apiMethod[method]}|================--------------->');
     print('url: $domain$url');
+    print('header: $headers');
     print('params: $params');
     print('body: $body');
     try {
