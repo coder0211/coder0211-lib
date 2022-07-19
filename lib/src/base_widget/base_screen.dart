@@ -1,4 +1,5 @@
 import 'package:coder0211/coder0211.dart';
+import 'package:coder0211/src/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
@@ -67,6 +68,34 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
     /// When this screen on dispose then store call onDispose function
     store.onDispose();
     super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return _baseBuild(context);
+  }
+
+  ///Build small using for mobile devices
+  @mustCallSuper
+  Widget buildSmall(BuildContext context);
+
+  ///Build medium using for tablet devices
+  @mustCallSuper
+  Widget buildMedium(BuildContext context);
+
+  ///Build large using for tablet devices
+  @mustCallSuper
+  Widget buildLarge(BuildContext context);
+
+  Widget _baseBuild(BuildContext context) {
+    if (1.0.w(context) < Constants.SMALL) {
+      return buildSmall(context);
+    } else if (1.0.w(context) < Constants.MEDIUM) {
+      return buildMedium(context);
+    } else {
+      return buildLarge(context);
+    }
   }
 
   ///printLogBlue is a method to print logs in blue.
