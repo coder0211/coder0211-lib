@@ -78,15 +78,19 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
 
   ///Build small using for mobile devices
   @mustCallSuper
-  Widget buildSmall(BuildContext context);
+  Widget buildSmall(BuildContext context) {
+    return 'Small device'.t1M();
+  }
 
   ///Build medium using for tablet devices
-  @mustCallSuper
-  Widget buildMedium(BuildContext context);
+  Widget buildMedium(BuildContext context) {
+    return 'Medium device'.t1M();
+  }
 
   ///Build large using for tablet devices
-  @mustCallSuper
-  Widget buildLarge(BuildContext context);
+  Widget buildLarge(BuildContext context) {
+    return 'Large device'.t1M();
+  }
 
   Widget _baseBuild(BuildContext context) {
     if (1.0.w(context) < Constants.SMALL) {
@@ -130,7 +134,7 @@ mixin BaseStoreMixin on Store {
   @protected
   @mustCallSuper
 
-  ///onDispose called when dispose c
+  ///onDispose called when dispose
   void onDispose();
 
   @protected
