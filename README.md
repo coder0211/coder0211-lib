@@ -43,19 +43,19 @@ class MyHomePage extends BaseScreen {
 ```dart
 class _MyHomePageState extends BaseScreenState<MyHomePage, MainStore> {
   @override
-  Widget buildLarge(BuildContext context) {
+  Widget buildLargeScreen(BuildContext context) {
     // TODO: implement buildLarge
     throw UnimplementedError();
   }
 
   @override
-  Widget buildMedium(BuildContext context) {
+  Widget buildMediumScreen(BuildContext context) {
     // TODO: implement buildMedium
     throw UnimplementedError();
   }
 
   @override
-  Widget buildSmall(BuildContext context) {
+  Widget buildSmallScreen(BuildContext context) {
     // TODO: implement buildSmall
     throw UnimplementedError();
   }
