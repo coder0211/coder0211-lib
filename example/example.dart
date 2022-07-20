@@ -91,38 +91,6 @@ class Example extends BaseScreen {
 
 class _ExampleState extends BaseScreenState<Example, ExampleStore> {
   @override
-  Widget build(BuildContext context) {
-    super.build(context);
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: 1.0.w(context),
-            ),
-            Observer(builder: (_) {
-              return Text(
-                '${store.ic}',
-                style: Theme.of(context).textTheme.headline4,
-              );
-            }),
-            'Hello'.d1()
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          store.ice();
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-
-  @override
   Widget buildLarge(BuildContext context) {
     // TODO: implement buildLarge
     throw UnimplementedError();
