@@ -77,32 +77,33 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
   }
 
   ///Build small using for mobile devices
-  @mustCallSuper
-  Widget buildSmall(BuildContext context) {
-    return 'Small device'.t1M();
-  }
+  @protected
+  Widget buildSmallScreen(BuildContext context);
 
   ///Build medium using for tablet devices
-  Widget buildMedium(BuildContext context) {
-    return 'Medium device'.t1M();
+  @protected
+  Widget buildMediumScreen(BuildContext context) {
+    return 'Medium Screen'.t1M();
   }
 
   ///Build large using for tablet devices
-  Widget buildLarge(BuildContext context) {
-    return 'Large device'.t1M();
+  @protected
+  Widget buildLargeScreen(BuildContext context) {
+    return 'Large Screen'.t1M();
   }
 
   Widget _baseBuild(BuildContext context) {
     if (1.0.w(context) < Constants.SMALL) {
-      return buildSmall(context);
+      return buildSmallScreen(context);
     } else if (1.0.w(context) < Constants.MEDIUM) {
-      return buildMedium(context);
+      return buildMediumScreen(context);
     } else {
-      return buildLarge(context);
+      return buildLargeScreen(context);
     }
   }
 
   ///printLogBlue is a method to print logs in blue.
+  @protected
   void printLogBlue(String message) {
     print('\x1B[34m$message\x1B[0m');
   }
