@@ -66,7 +66,7 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
   @override
   void dispose() {
     /// When this screen on dispose then store call onDispose function
-    store.onDispose();
+    store.onDispose(context);
     super.dispose();
   }
 
@@ -136,7 +136,7 @@ mixin BaseStoreMixin on Store {
   @mustCallSuper
 
   ///onDispose called when dispose
-  void onDispose();
+  void onDispose(BuildContext context);
 
   @protected
   @mustCallSuper
