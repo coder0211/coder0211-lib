@@ -16,20 +16,24 @@ class BaseNavigationBar extends StatelessWidget {
   final double? heightIcon;
   final double? widthIcon;
   final int indexSlelected;
-  const BaseNavigationBar({
-    Key? key,
-    this.bgColor,
-    this.radius,
-    this.containerHeight,
-    required this.items,
-    required this.onItemSelected,
-    this.color,
-    this.selectedColor,
-    this.style,
-    this.heightIcon,
-    this.widthIcon,
-    required this.indexSlelected,
-  }) : super(key: key);
+  final bool? isShowText;
+  final List<BoxShadow>? boxShadow;
+  const BaseNavigationBar(
+      {Key? key,
+      this.bgColor,
+      this.radius,
+      this.containerHeight,
+      required this.items,
+      required this.onItemSelected,
+      this.color,
+      this.selectedColor,
+      this.style,
+      this.heightIcon,
+      this.widthIcon,
+      required this.indexSlelected,
+      this.isShowText,
+      this.boxShadow})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +41,13 @@ class BaseNavigationBar extends StatelessWidget {
       margin: const EdgeInsets.all(18),
       decoration: BoxDecoration(
           color: bgColor ?? const Color(0xffFCFCFF),
-          boxShadow: [
-            BoxShadow(
-                blurRadius: 7,
-                offset: const Offset(4, 4),
-                color: const Color(0xffC9CADF).withOpacity(0.55)),
-          ],
+          boxShadow: boxShadow ??
+              [
+                BoxShadow(
+                    blurRadius: 7,
+                    offset: const Offset(4, 4),
+                    color: const Color(0xffC9CADF).withOpacity(0.55)),
+              ],
           borderRadius: BorderRadius.all(Radius.circular(radius ?? 50))),
       child: SafeArea(
         bottom: false,
@@ -68,7 +73,8 @@ class BaseNavigationBar extends StatelessWidget {
                               fontWeight: FontWeight.w500, fontSize: 12),
                       title: item.title,
                       height: heightIcon ?? 30,
-                      width: widthIcon ?? 30));
+                      width: widthIcon ?? 30,
+                      isShowText: isShowText ?? true));
             }).toList(),
           ),
         ),
@@ -83,14 +89,16 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
   final TextStyle style;
   final double? height, width;
   final String title;
+  final bool isShowText;
   const _BaseNavigationBarItemWidget(
       {Key? key,
       required this.icon,
       required this.style,
       required this.color,
-      this.height,
-      this.width,
-      required this.title})
+      required this.height,
+      required this.width,
+      required this.title,
+      required this.isShowText})
       : super(key: key);
 
   @override
@@ -99,12 +107,15 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
       color: Colors.transparent,
       duration: const Duration(milliseconds: 500),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           BaseSVG(path: icon, width: width, height: height, color: color),
-          Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: BaseText(title, style: style.copyWith(color: color)),
-          )
+          isShowText
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 5),
+                  child: BaseText(title, style: style.copyWith(color: color)),
+                )
+              : const SizedBox()
         ],
       ),
     );

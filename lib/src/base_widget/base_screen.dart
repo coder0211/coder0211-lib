@@ -93,9 +93,9 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
   }
 
   Widget _baseBuild(BuildContext context) {
-    if (1.0.w(context) < Constants.SMALL) {
+    if (1.0.w(context) < Constants.smallScreen) {
       return buildSmallScreen(context);
-    } else if (1.0.w(context) < Constants.MEDIUM) {
+    } else if (1.0.w(context) < Constants.mediumScreen) {
       return buildMediumScreen(context);
     } else {
       return buildLargeScreen(context);

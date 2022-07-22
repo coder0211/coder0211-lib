@@ -11,6 +11,6 @@ class Constants {
     r'^https:\/\/youtu\.be\/([_\-a-zA-Z0-9]{11}).*$',
   ];
 
-  static double SMALL = 640;
-  static double MEDIUM = 1007;
+  static double smallScreen = 640;
+  static double mediumScreen = 1007;
 }
