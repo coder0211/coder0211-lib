@@ -65,9 +65,7 @@ class BaseNavigationBar extends StatelessWidget {
                       color: index == indexSlelected
                           ? (selectedColor ?? const Color(0xffFF8181))
                           : (color ?? const Color(0xff797979)),
-                      icon: index == indexSlelected
-                          ? item.iconSelected
-                          : item.icon,
+                      icon: item.icon,
                       style: style ??
                           GoogleFonts.notoSans(
                               fontWeight: FontWeight.w500, fontSize: 12),
@@ -124,8 +122,6 @@ class _BaseNavigationBarItemWidget extends StatelessWidget {
 
 class BaseNavigationBarItem {
   final String icon;
-  final String iconSelected;
   final String title;
-  BaseNavigationBarItem(
-      {required this.icon, required this.title, required this.iconSelected});
+  BaseNavigationBarItem({required this.icon, required this.title});
 }
