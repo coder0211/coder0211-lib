@@ -45,6 +45,20 @@ class BaseSharedPreferences {
 
   /// # [saveBoolValue] Save bool value to SharedPreferences
   /// * Param [value] The value to save
+  /// * Param [key] The key to save the value
+  static Future<bool> savedBoolValue(String key, bool value) async {
+    final preferences = await SharedPreferences.getInstance();
+    return preferences.setBool(key, value);
+  }
+
+  /// # [getIntValue] Get int value from SharedPreferences
+  /// * Param [key] The key to get the value
+  static Future<bool?> getBoolValue(String key) async {
+    final preferences = await SharedPreferences.getInstance();
+    final value = preferences.getBool(key);
+    return value;
+  }
+
   static Future<void> remove(String key) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove(key);
