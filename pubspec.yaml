@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
 
   #loading indicator
-  loading_indicator: ^3.0.2
+  loading_indicator: ^3.1.0
 
   #auto size text
   auto_size_text: ^3.0.0
@@ -41,9 +41,9 @@ dependencies:
   flutter_svg: ^1.0.0
 
   #state managerment
-  flutter_mobx: ^2.0.6+1
-  mobx: ^2.0.7+2
-  provider: ^6.0.2
+  flutter_mobx: ^2.0.6+4
+  mobx: ^2.1.1
+  provider: ^6.0.4
 
   #font text
   google_fonts: ^3.0.1

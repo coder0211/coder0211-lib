@@ -49,7 +49,7 @@ class BaseUtils {
   static void copy(BuildContext context,
       {required String content, required Color? bgColor}) {
     Clipboard.setData(new ClipboardData(text: content)).then((_) {
-      showToast('Copied', bgColor: bgColor);
+      showToast(content, bgColor: bgColor);
     });
   }
 
