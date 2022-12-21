@@ -47,9 +47,11 @@ class BaseUtils {
   /// * Param [content] Text to copy
   /// * Param [bgColor] Background color of showToast
   static void copy(BuildContext context,
-      {required String content, required Color? bgColor}) {
+      {required String content,
+      required Color? bgColor,
+      required String text}) {
     Clipboard.setData(new ClipboardData(text: content)).then((_) {
-      showToast(content, bgColor: bgColor);
+      showToast(text, bgColor: bgColor);
     });
   }
 

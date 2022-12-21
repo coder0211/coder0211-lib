@@ -1,7 +1,6 @@
 import 'package:coder0211/coder0211.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
 
 part 'example_store.g.dart';
@@ -19,7 +18,7 @@ abstract class _ExampleStore with Store, BaseStoreMixin {
   void onInit(BuildContext context) {}
 
   @override
-  void onDispose() {}
+  void onDispose(BuildContext context) {}
 
   @override
   Future<void> onWidgetBuildDone(BuildContext context) async {}
@@ -91,20 +90,7 @@ class Example extends BaseScreen {
 
 class _ExampleState extends BaseScreenState<Example, ExampleStore> {
   @override
-  Widget buildLarge(BuildContext context) {
-    // TODO: implement buildLarge
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildMedium(BuildContext context) {
-    // TODO: implement buildMedium
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildSmall(BuildContext context) {
-    // TODO: implement buildSmall
-    throw UnimplementedError();
+  Widget buildSmallScreen(BuildContext context) {
+    return Container();
   }
 }
