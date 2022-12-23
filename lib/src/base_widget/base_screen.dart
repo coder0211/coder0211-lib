@@ -48,7 +48,7 @@ abstract class BaseScreenState<T extends BaseScreen, S extends BaseStoreMixin>
     super.initState();
 
     ///Initialize the [store] instance.
-    store = context.read<S>();
+    // store = context.read<S>();
 
     store.onInit(context);
 
